@@ -1,0 +1,51 @@
+@mixin rounded-box($size, $border-radius, $background-gradient) {
+  width: $size;
+  height: $size;
+  border-radius: $border-radius;
+  -webkit-backdrop-filter: blur(px);
+  backdrop-filter: blur(0px);
+  box-shadow: inset 0px 10px 9px 0px rgba(0, 0, 0, 0.55);
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: $border-radius;
+    border: 3px solid transparent;
+    background: $background-gradient border-box;
+    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+  }
+}
+
+@mixin polygon($size, $angle, $border-radius, $background-gradient) {
+  width: $size;
+  height: $size;
+  transform: rotate($angle);
+  border-radius: $border-radius;
+  position: absolute;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: $border-radius;
+    overflow: hidden;
+    border: 1px solid transparent;
+    background: $background-gradient border-box;
+    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+  }
+}
+
+@mixin georgian-font($font-weight: 600, $font-size: 1.2rem) {
+  font-family: "NotoSansGeorgian";
+  font-weight: $font-weight;
+  font-size: $font-size;
+}
+
+@mixin english-font($font-weight: 600, $font-size: 1.2rem) {
+  font-family: "Montserrat";
+  font-weight: $font-size;
+  font-size: $font-size;
+}

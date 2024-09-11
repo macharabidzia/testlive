@@ -1,0 +1,48 @@
+@use "../../../styles/base/variables" as *;
+$exit-dimension: 35px;
+:host {
+  display: block;
+  background: $color-dark-gray;
+  border-radius: 10px;
+  padding: 5px 10px;
+  margin: 0;
+}
+video {
+  width: 100%;
+  height: fit-content;
+  border-radius: 10px;
+}
+.video-wrapper {
+  max-width: 640px;
+  height: auto;
+  &__heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    .exit {
+      width: $exit-dimension;
+      height: $exit-dimension;
+      background-color: $color-red;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      p {
+        color: $color-primary;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+}
+h1 {
+  color: $color-primary;
+}
+.en {
+  font-family: "Montserat" !important;
+}
+.ge {
+  font-family: "NotoSansGeorgian" !important;
+}

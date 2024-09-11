@@ -1,0 +1,62 @@
+/* You can add global styles to this file, and also import other style files */
+@import "@angular/cdk/overlay-prebuilt.css";
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+}
+::view-transition-old(roost),
+/* Representation of the new page view */
+::view-transition-new(root) {
+  animation-duration: 3s;
+}
+
+// Montserat Font
+$font-families: (
+  "Montserrat": (
+    "Regular": "Montserrat-Regular",
+    "Bold": "Montserrat-Bold",
+    "ExtraBold": "Montserrat-ExtraBold",
+    "Medium": "Montserrat-Medium",
+    "Light": "Montserrat-Light",
+    "SemiBold": "Montserrat-SemiBold",
+  ),
+  "NotoSansGeorgian": (
+    "Regular": "NotoSansGeorgian-Regular",
+    "Bold": "NotoSansGeorgian-Bold",
+    "ExtraBold": "NotoSansGeorgian-ExtraBold",
+    "Medium": "NotoSansGeorgian-Medium",
+    "Light": "NotoSansGeorgian-Light",
+    "SemiBold": "NotoSansGeorgian-SemiBold",
+  ),
+);
+
+// Define font weights
+$font-weights: (
+  "Regular": 400,
+  "Bold": 700,
+  "ExtraBold": 900,
+  "Medium": 500,
+  "Light": 300,
+  "SemiBold": 600,
+);
+
+@each $family, $fonts in $font-families {
+  @each $style, $filename in $fonts {
+    @font-face {
+      font-family: #{$family};
+      src: url("../assets/fonts/#{$family}/#{$filename}.ttf") format("truetype");
+      font-weight: map-get($font-weights, $style);
+    }
+  }
+}
+
+@media all and (max-width: 500px) {
+  html {
+    font-size: 9px;
+  }
+}
+
+// NotoSansGeorgian Font

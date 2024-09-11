@@ -1,0 +1,74 @@
+@if(type=='card'){
+<div class="card">
+  <div class="card__header">
+    <div class="card__header-icon">
+      <img src="images/bmw.png" />
+    </div>
+    <p>{{ data.heading | translate }}</p>
+  </div>
+
+  <div class="card__body">
+    <p>{{ "card-unresolved-text" | translate }}</p>
+    <div class="image-container">
+      <img src="images/car.png" />
+    </div>
+  </div>
+  <br />
+  <br />
+
+  <div class="card__footer">
+    @for(item of arr; track item){
+    <div class="rounded-box">
+      <img width="23" height="9" src="icons/bmw_icon.png" />
+    </div>
+    }
+  </div>
+  <div class="polygon"></div>
+  <div class="polygon polygon-down"></div>
+  <div class="polygon polygon-down polygon-down-1"></div>
+</div>
+} @if(type === 'gold' || type ==='silver'){
+<div [className]="type">
+  <div class="card__header">
+    <p>{{ data.leftHeading | translate }}</p>
+    @if(type==='gold'){
+    <div class="card__user">
+      <div class="user__wrapper">
+        <img src="icons/person.png" />
+      </div>
+      <div>
+        <p>T*****N</p>
+      </div>
+    </div>
+    }
+  </div>
+  <div class="card__body">
+    <h1>{{ data.price }}<span>₾</span></h1>
+  </div>
+  <br />
+  <div class="card__footer">
+    @if(type ==='silver'){ @for(item of silverArray; track $index;){
+    @if(getRandomFilledBoxCount(silverArray) >= $index ){
+    <div class="rounded-box">
+      <p>₾</p>
+    </div>
+    }@else {
+    <div class="inactive-box">
+      <p class="dark">₾</p>
+    </div>
+    } } }@else { @for(item of array; track item;){
+    @if(getRandomFilledBoxCount(array) >= $index ){
+    <div class="rounded-box">
+      <p>₾</p>
+    </div>
+    } @else{
+    <div class="inactive-box">
+      <p class="dark">₾</p>
+    </div>
+    } } }
+  </div>
+  <div class="polygon"></div>
+  <div class="polygon polygon-down"></div>
+  <div class="polygon polygon-down polygon-down-1"></div>
+</div>
+}

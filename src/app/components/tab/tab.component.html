@@ -1,0 +1,49 @@
+<div class="tab">
+  <div class="tab__header">
+    @for (item of arr; track $index){
+    <div
+      (click)="changeTab(item)"
+      [ngClass]="{ '--content': true, active: item.active }"
+    >
+      <div class="--image-wrapper">
+        <img [src]="'icons/' + item.icon" />
+      </div>
+      <p>{{ item.text | translate }}</p>
+    </div>
+    }
+  </div>
+  <div class="tab__body">
+    <div class="--progress">
+      <div class="--progress__overlay">
+        <div class="icons-wrapper">
+          <div class="container">
+            <p class="zero-gel">0 ₾</p>
+          </div>
+          @for (item of progress; track $index) {
+          <div class="container">
+            @if($index <maxNumber){ <img src="icons/point.png" />
+            }@else {
+            <img class="point1" src="icons/point1.png" />
+            }
+            <p>{{ item }} ₾</p>
+          </div>
+          }
+          <div class="container">
+            <p class="zero-gel">∞</p>
+          </div>
+        </div>
+      </div>
+      <div [style.width.%]="percent" class="gradient-overlay"></div>
+    </div>
+
+    <div class="info tooltip">
+      <img (click)="toggleTooltip()" src="icons/info.png" />
+      <span
+      (click)="toggleTooltip()"
+        [style.display]="toggleVisible ? 'block' : 'none'"
+        class="tooltiptext"
+        >{{ "played-monets" | translate }}</span
+      >
+    </div>
+  </div>
+</div>

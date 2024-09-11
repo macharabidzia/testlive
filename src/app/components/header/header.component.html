@@ -1,0 +1,11 @@
+<header [ngClass]="{ 'header-class': headerClass }">
+  <div>betlive.com</div>
+  <div class="languages">
+    <div (click)="changeLanguage('en')" class="languages__en">
+      <img src="icons/en.png" />
+    </div>
+    <div (click)="changeLanguage('ge')" class="languages__ka">
+      <img src="icons/ka.png" />
+    </div>
+  </div>
+</header>

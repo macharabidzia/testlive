@@ -1,0 +1,54 @@
+<div class="home">
+  <app-header></app-header>
+  <h1 class="home__heading">{{ "everyday" | translate | uppercase }}</h1>
+  <div class="home__information">
+    <div class="inner-box"></div>
+    <div class="content">
+      <h1 class="heading">
+        150 000ლ {{ "and" | translate | uppercase }} 150 000
+        <span> FREESPINS </span>
+      </h1>
+      <hr class="hr" />
+      <div class="icons-wrapper">
+        <div class="v">
+          <img width="32" height="32" src="icons/j.png" alt="" />
+        </div>
+        <div class="v2">
+          <h5>9 {{ "monets" | translate }}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="home__video-button">
+    <app-button (click)="openDialog()" type="video"></app-button>
+  </div>
+  <div class="home__coin-text">
+    <div class="coin-first">
+      <p>9 {{ "coins" | translate | uppercase }}&nbsp;</p>
+      <img src="icons/equal.png" /> &nbsp;{{ "share" | translate | uppercase }}
+      <span class="green">&nbsp;4 800 000&nbsp;</span>
+    </div>
+    <div class="coin-second">
+      <span class="fs"> FREESPINS &nbsp;</span
+      >{{ "jackpot" | translate | uppercase }}
+    </div>
+  </div>
+  <div class="home__card-container">
+    <div class="left-card">
+      <app-card type="card"></app-card>
+    </div>
+    <div class="card-wrapper">
+      <app-card type="gold"></app-card>
+      <app-card type="silver"></app-card>
+    </div>
+  </div>
+  <h2>{{ "bonus-text" | translate | uppercase }}</h2>
+  <app-tab></app-tab>
+  <br />
+  <div class="centered">
+    <app-button type="red" text="play" />
+  </div>
+  <div class="carousel-wrapper">
+    <app-carousel></app-carousel>
+  </div>
+</div>

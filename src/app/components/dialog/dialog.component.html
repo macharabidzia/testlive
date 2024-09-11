@@ -1,0 +1,13 @@
+<div class="video-wrapper">
+  <div class="video-wrapper__heading">
+    <h1 [className]="data.lang">{{ "instruction" | translate }}</h1>
+    <div (click)="closeDialog()" class="exit">
+      <p>X</p>
+    </div>
+  </div>
+
+  <video controls>
+    <source src="videos/betlive.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</div>

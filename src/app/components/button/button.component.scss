@@ -1,0 +1,46 @@
+@use "../../../styles/base/variables" as *;
+@use "../../../styles/base/mixins" as *;
+
+@mixin button-mixin {
+  font-weight: 600;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $color-primary;
+}
+.video {
+  @include button-mixin();
+  gap: 15px;
+  background-color: rgba(32, 35, 51, 0.8);
+  height: 4.5rem;
+  width: 250px;
+  border-radius: 15px;
+  @include georgian-font(600, 1rem);
+}
+.red {
+  @include button-mixin();
+  background-color: $color-red;
+  width: 228px;
+  height: 4.5rem;
+  border-radius: 20px;
+  p {
+    @include georgian-font(600, 1.5rem);
+  }
+}
+.red-sm {
+  @include button-mixin();
+  background-color: $color-red;
+  width: 158px;
+  height: 62px;
+  border-radius: 12px;
+  p {
+    @include georgian-font(600, 1rem);
+  }
+  @media screen and (max-width: 400px) {
+    width: 91px;
+    height: 34px;
+  }
+}

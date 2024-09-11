@@ -1,0 +1,26 @@
+<div class="carousel">
+  @for (item of slides; track $index) { }
+  <div @enterAnimation class="carousel__container">
+    <header>
+      <img src="{{ 'images/' + getSlide() }}" />
+    </header>
+    <footer>
+      <app-button (click)="goToNotFound404()" type="red-sm" text="learn-more"></app-button>
+    </footer>
+  </div>
+  <div @enterAnimation class="carousel__container hidden">
+    <header>
+      <img src="{{ 'images/' + getSlide(1) }}" />
+    </header>
+    <footer>
+      <app-button (click)="goToNotFound404()" type="red-sm" text="learn-more"></app-button>
+    </footer>
+  </div>
+  <div (click)="getPrev()" class="arrow-left">
+    <img src="icons/arrow.png" />
+  </div>
+  <div (click)="getNext()" class="arrow-right">
+    <img src="icons/arrow.png" />
+  </div>
+</div>
+<br />
